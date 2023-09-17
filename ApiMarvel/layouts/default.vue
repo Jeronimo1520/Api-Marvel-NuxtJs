@@ -3,15 +3,29 @@
     <v-layout>
       <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
 
-      <v-app-bar class="appbar" color="#518cca">
+      <v-app-bar class="appbar" color="#ff171f">
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-        <v-toolbar-title style="color: black; font-weight: 700;">{{ titleApp }}</v-toolbar-title>
+        <!-- Mostrar el logotipo de Marvel en el centro -->
+        <v-img
+          src="https://1000marcas.net/wp-content/uploads/2021/07/Marvel-Comics-logo.png"  
+          max-height="48" 
+          class="marvel-logo"
+        ></v-img>
 
       </v-app-bar>
 
       <v-navigation-drawer v-model="drawer" location="left" temporary>
-        <v-list :items="items"></v-list>
+        <NuxtLink to="/">
+            <v-list-item>
+              <v-list-item-title>Inicio</v-list-item-title>
+            </v-list-item>
+          </NuxtLink>
+        <NuxtLink to="/characters">
+            <v-list-item>
+              <v-list-item-title>Personajes</v-list-item-title>
+            </v-list-item>
+          </NuxtLink>
       </v-navigation-drawer>
       <v-main class="align-center justify-center">
         <!-- slot: Carga el contenido de la página (pages/..) -->
@@ -43,25 +57,6 @@ const titleApp = ref("MARVEL CHARACTERS")
 export default {
   data: () => ({
     drawer: false,
-    group: null,
-    items: [
-      {
-        title: 'Foo',
-        value: 'foo',
-      },
-      {
-        title: 'Bar',
-        value: 'bar',
-      },
-      {
-        title: 'Fizz',
-        value: 'fizz',
-      },
-      {
-        title: 'Buzz',
-        value: 'buzz',
-      },
-    ],
   }),
 
   watch: {
