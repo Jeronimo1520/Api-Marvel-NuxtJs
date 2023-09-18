@@ -1,5 +1,5 @@
-<template>
-  <v-container>
+<template class="template">
+  <v-container class="container">
     <v-row>
       <v-col v-for="character in characters" :key="character.id" cols="12"
         sm="6"
@@ -20,7 +20,7 @@ const HASH = "426a36e6f780a1c9149fbd608ac5d007"
 const characters = ref([])
 
 const loadCharacters = async () => {
-  const url = `https://gateway.marvel.com:443/v1/public/characters?limit=100&nameStartsWith=x&ts=1&apikey=${PUBLIC_API_KEY}&hash=${HASH}`;
+  const url = `https://gateway.marvel.com:443/v1/public/characters?limit=100&nameStartsWith=c&ts=1&apikey=${PUBLIC_API_KEY}&hash=${HASH}`;
   const { data } = await axios.get(url);
   // Filtrar los personajes que tienen una imagen disponible
   const charactersWithImages = data.data.results.filter(character => {
@@ -33,3 +33,6 @@ const loadCharacters = async () => {
 
 loadCharacters();
 </script>
+<style>
+
+</style>
