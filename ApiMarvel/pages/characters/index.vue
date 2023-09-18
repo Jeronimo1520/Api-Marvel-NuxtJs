@@ -20,7 +20,7 @@ const HASH = "426a36e6f780a1c9149fbd608ac5d007"
 const characters = ref([])
 
 const loadCharacters = async () => {
-  const url = `https://gateway.marvel.com:443/v1/public/characters?limit=100&nameStartsWith=Iron&ts=1&apikey=${PUBLIC_API_KEY}&hash=${HASH}`;
+  const url = `https://gateway.marvel.com:443/v1/public/characters?limit=100&nameStartsWith=x&ts=1&apikey=${PUBLIC_API_KEY}&hash=${HASH}`;
   const { data } = await axios.get(url);
   // Filtrar los personajes que tienen una imagen disponible
   const charactersWithImages = data.data.results.filter(character => {
@@ -28,7 +28,7 @@ const loadCharacters = async () => {
   });
 
   characters.value = charactersWithImages;
-  console.log(charactersWithImages);
+  console.log(charactersWithImages)
 }
 
 loadCharacters();
