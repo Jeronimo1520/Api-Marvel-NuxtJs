@@ -23,7 +23,7 @@
             <v-card-list style="text-align: center; font-size: large; font-weight: bold;  font-weight: bold;">
                 <v-list-item v-if="characterApi[0].series.items && characterApi[0].series.items.length > 0"
                     v-for="(item, index) in characterApi[0].series.items.slice(0, 3)">
-                    <!--Slice trae una nueva matriz con solo 3 items-->
+                    <!--Slice trae una nueva lista con solo 3 items-->
                     <v-list-item-title style="font-weight: bold;">{{ item.name }}</v-list-item-title>
                 </v-list-item>
                 <v-list-item v-else>

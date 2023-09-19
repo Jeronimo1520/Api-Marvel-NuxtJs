@@ -19,7 +19,7 @@
           <v-list-item><v-icon icon="mdi mdi-domino-mask" style="color: red;"/> Personajes </v-list-item>
         </NuxtLink>
       </v-navigation-drawer>
-      <v-main class="main">
+      <v-main >
         <!-- slot: Carga el contenido de la página (pages/..) -->
         <slot />
       </v-main>
@@ -44,7 +44,7 @@ const titleApp = ref("MARVEL CHARACTERS")
 }
 
 .main {
- background-color: rgb(210, 226, 240) !important;
+ /* background-color: rgb(210, 226, 240) !important; */
 }
 </style>
 
