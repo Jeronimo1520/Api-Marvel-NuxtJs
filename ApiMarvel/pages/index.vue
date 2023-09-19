@@ -1,7 +1,7 @@
 <template>
     <div class="welcome-page">
       <center>
-        <h1>Bienvenido a Personajes de Marvel</h1>
+        <h1>Bienvenido</h1>
         <p>En este sitio web podrás visualizar personajes de Marvel y obtener más información sobre ellos</p>
         <NuxtLink to="/characters">
           <v-btn>
