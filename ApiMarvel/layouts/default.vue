@@ -1,33 +1,25 @@
 <template>
   <v-card>
     <v-layout>
-      <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
 
       <v-app-bar class="appbar" color="#ff171f">
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
         <!-- Mostrar el logotipo de Marvel en el centro -->
-        <v-img
-          src="https://1000marcas.net/wp-content/uploads/2021/07/Marvel-Comics-logo.png"  
-          max-height="48" 
-          class="marvel-logo"
-        ></v-img>
+        <v-img src="https://1000marcas.net/wp-content/uploads/2021/07/Marvel-Comics-logo.png" max-height="48"
+          class="marvel-logo"></v-img>
 
       </v-app-bar>
 
       <v-navigation-drawer v-model="drawer" location="left" temporary>
         <NuxtLink to="/">
-            <v-list-item>
-              <v-list-item-title>Inicio</v-list-item-title>
-            </v-list-item>
-          </NuxtLink>
+          <v-list-item><v-icon icon="mdi-home" style="color: red;"/> Inicio </v-list-item>
+        </NuxtLink>
         <NuxtLink to="/characters">
-            <v-list-item>
-              <v-list-item-title>Personajes</v-list-item-title>
-            </v-list-item>
-          </NuxtLink>
+          <v-list-item><v-icon icon="mdi mdi-domino-mask" style="color: red;"/> Personajes </v-list-item>
+        </NuxtLink>
       </v-navigation-drawer>
-      <v-main class="align-center justify-center">
+      <v-main class="main">
         <!-- slot: Carga el contenido de la página (pages/..) -->
         <slot />
       </v-main>
@@ -45,12 +37,15 @@ const titleApp = ref("MARVEL CHARACTERS")
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Roboto:wght@300&family=Signika&family=Ubuntu&display=swap');
 
-.appbar{
-  display: flex; 
+.appbar {
+  display: flex;
   align-items: center;
   text-align: center;
 }
 
+.main {
+ background-color: rgb(210, 226, 240) !important;
+}
 </style>
 
 <script>

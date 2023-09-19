@@ -1,31 +1,35 @@
 <template>
-    <v-container>
+    <v-container class="container">
         <v-card class="card">
-            <v-card-title class="title"> {{ characterApi[0].name }}</v-card-title>
+            <v-card-title class="title" style="text-align: center; font-size:xx-large;  font-weight: bold;"> {{ characterApi[0].name
+            }}</v-card-title>
             <v-img :src="characterApi[0].thumbnail.path + '.'
                 + characterApi[0].thumbnail.extension" alt="Foto del personaje" class="character-image"></v-img>
-            <v-card-text>
-                <p>{{ characterApi[0].description }}</p>
+            <v-card-text style="text-align: center; font-size:medium;  font-weight: bold;">
+                <p>{{ characterApi[0].description }}</p> 
             </v-card-text>
-            <v-card-text>
-                <p>* Cantidad de comics: {{ characterApi[0].comics.available }}</p>
+            <v-card-text style="text-align: center; font-size: large;  font-weight: bold;">
+                <p>Cantidad de comics: {{ characterApi[0].comics.available }}</p>
             </v-card-text>
-            <v-card-text>
-                <p>* Cantidad de series: {{ characterApi[0].series.available }}</p>
+            <v-card-text style="text-align: center; font-size: large;  font-weight: bold;">
+                <p>Cantidad de series: {{ characterApi[0].series.available }}</p>
             </v-card-text>
-            <v-card-text>
-                <p>* Cantidad de stories: {{ characterApi[0].stories.available }}</p>
+            <v-card-text style="text-align: center; font-size: large;  font-weight: bold;">
+                <p>Cantidad de stories: {{ characterApi[0].stories.available }}</p>
             </v-card-text>
-            <v-card-text>
-                <p> * Cantidad de events: {{ characterApi[0].events.available }}</p>
+            <v-card-text style="text-align: center; font-size: large;  font-weight: bold;  font-weight: bold;">
+                <p>Cantidad de events: {{ characterApi[0].events.available }}</p>
             </v-card-text>
-            <v-card-text>
-                <ul v-for="i in [0, 1, 2]">
-                    <li>
-                        {{ characterApi[0].series.items[i].name }}
-                    </li>
-                </ul>
-            </v-card-text>
+            <v-card-list style="text-align: center; font-size: large; font-weight: bold;  font-weight: bold;">
+                <v-list-item v-if="characterApi[0].series.items && characterApi[0].series.items.length > 0"
+                    v-for="(item, index) in characterApi[0].series.items.slice(0, 3)">
+                    <!--Slice trae una nueva matriz con solo 3 items-->
+                    <v-list-item-title style="font-weight: bold;">{{ item.name }}</v-list-item-title>
+                </v-list-item>
+                <v-list-item v-else>
+                    <v-list-item-title>No hay elementos en series.</v-list-item-title>
+                </v-list-item>
+            </v-card-list>
         </v-card>
     </v-container>
 </template>
@@ -55,6 +59,8 @@ try {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 50% !important;
+    justify-content: center !important;
 }
 
 .title {
@@ -63,7 +69,9 @@ try {
     text-align: center;
 }
 
-.card{
-     
+.card {
+    background: linear-gradient(45deg, #1111, white) !important;
+    border-color: black;
 }
+
 </style>

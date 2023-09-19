@@ -3,9 +3,9 @@
         <v-img class="character-img" :src="character.thumbnail.path + '.' + character.thumbnail.extension"></v-img>
         <v-card-title>{{ character.name }}</v-card-title>
         <v-card-actions>
-                <v-btn variant="outlined" @click="viewMore()">
-                    Ver más
-                </v-btn>
+            <v-btn class="btn" variant="outlined" @click="viewMore()">
+                Ver más
+            </v-btn>
         </v-card-actions>
     </v-card>
 </template>
@@ -33,12 +33,24 @@ const viewMore = () => {
 </script>
 <style>
 .character-img {
-    width: 250px;
-    height: 300px;
+    /* Se establece un tamaño máximo para todas las imágenes */
+    max-width: 100%;
+    /* El ancho máximo será el 100% del contenedor (tarjeta) */
+    max-height: 300px;
+    /* Se stablece una altura máxima deseada */
+    width: auto;
+    /* Para mantener la proporcion de aspecto */
+    height: auto;
+    /* Para mantener la proporcion de aspecto */
 }
 
 .character-card {
-    width: 250px;
-    background-color: #1111
+    background-color: whitesmoke;
+    border-color: black;
+}
+
+.btn:hover {
+
+    background-color: rgb(163, 201, 234);
 }
 </style>

@@ -2,15 +2,14 @@
     <div>
         <center>
             <h1>Bienvenido a Personajes de Marvel</h1>
-            <p>En esta app podras visualizar todos los personajes de Marvel y mas informacion sobre ellos</p>
+            <p>En este sitio web podras visualizar personajes de Marvel y mas informacion sobre ellos</p>
             <NuxtLink to="/characters">
-                Click para visualizar 
+                <v-btn>
+                    Click para visualizar 
+                </v-btn>
             </NuxtLink>
         </center>
 
-    </div>
-    <div>
-        <p></p>
     </div>
 </template>
 <script>
