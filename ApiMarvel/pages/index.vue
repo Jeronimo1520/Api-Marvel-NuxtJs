@@ -13,12 +13,6 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    // Tu script aquí
-  }
-  </script>
-  
   <style scoped>
   .welcome-page {
     min-height: 100vh;

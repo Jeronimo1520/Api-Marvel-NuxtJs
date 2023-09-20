@@ -2,7 +2,7 @@
   <v-card>
     <v-layout>
 
-      <v-app-bar class="appbar" color="#ff171f">
+      <v-app-bar class="appbar" color="black">
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
         <!-- Mostrar el logotipo de Marvel en el centro -->
@@ -43,9 +43,6 @@ const titleApp = ref("MARVEL CHARACTERS")
   text-align: center;
 }
 
-.main {
- /* background-color: rgb(210, 226, 240) !important; */
-}
 </style>
 
 <script>

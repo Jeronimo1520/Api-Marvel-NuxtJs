@@ -15,7 +15,7 @@
 import axios from "axios";
 
 const PUBLIC_API_KEY = 'cac443484e979ba71815a80c14030705';
-const HASH = "426a36e6f780a1c9149fbd608ac5d007"
+const HASH = "426a36e6f780a1c9149fbd608ac5d007" 
 
 const characters = ref([])
 

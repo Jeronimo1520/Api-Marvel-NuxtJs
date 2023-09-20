@@ -45,7 +45,6 @@ const characterId = route.params.id
 
 
 try {
-    // const url = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?${PUBLIC_API_KEY}`;
     const url = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?&ts=1&apikey=${PUBLIC_API_KEY}&hash=${HASH}`
     const { data } = await axios.get(url);
     characterApi.value = data.data.results;
